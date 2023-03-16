@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员登录界面</title>
+    <link rel="stylesheet" th:href="@{/static/css/index_work.css}">
+</head>
+<body>
+<form th:action="@{/loginAdmin}" method="post" style="text-align: center;font-size: 120%">
+    <input type="text" name="username" placeholder="请输入用户名"><br>
+    <input type="text" name="password" placeholder="请输入密码"><br>
+    <input type="submit" value="登录"><br>
+</form>
+</body>
+</html>

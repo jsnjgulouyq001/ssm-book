@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理员修改界面</title>
+    <link rel="stylesheet" th:href="@{/static/css/index_work.css}">
+</head>
+<body>
+<div style="text-align: right">
+    <form>
+        <a th:text="${admin.username}" th:href="@{/updateAdminOne}"></a>
+        欢迎使用图书管理员系统
+        <a th:href="@{/adminLogOut}">退出登录</a>
+    </form>
+</div>
+<form style="text-align: center" th:action="@{/book/page/1}" method="put">
+    图书号：<input type="text" name="bookId"><br>
+    书名：<input type="text" name="name"><br>
+    作者：<input type="text" name="author"><br>
+    出版社：<input type="text" name="publish"><br>
+    标准书号：<input type="text" name="isbn"><br>
+    简介：<input type="text" name="introduction"><br>
+    语言：<input type="text" name="language"><br>
+    价格:<input type="text" name="price"><br>
+    出版时间：<input type="text" name="pubDate"><br>
+    分类号：<input type="text" name="clazzId"><br>
+    剩余数量：<input type="text" name="number"><br>
+    <input type="submit" value="提交"><br>
+</form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员界面</title>
+    <link rel="stylesheet" th:href="@{/static/css/index_work.css}">
+</head>
+<body>
+<div style="text-align: right">
+    <form>
+        <!--        <a th:text="${admin.username}" th:href="@{/updateAdminOne}"></a>-->
+        欢迎使用图书管理员系统
+        <a th:href="@{/adminLogOut}">退出登录</a>
+    </form>
+</div>
+<div style="text-align: center;font-size: 200%">图书管理员系统</div>
+<div style="text-align: center;font-size:150%">
+    <!--    <form>-->
+    读者功能展示<br>
+    <br>
+    <a th:href="@{/bookAdmin/page/1}">图书管理</a><br>
+    <!--借书还书放在展示功能中的相对的操作栏中-->
+    <!--还书也可以在借阅信息中实现还书功能-->
+    <!--        <a th:href="@{/bookAdminLike/page/{pageNum}}">借书</a><br>-->
+    <!--        <a th:href="@{/lendBook/page/{pageNum}}">还书</a><br>-->
+    <a th:href="@{/card/page/1}">读者证管理</a><br>
+    <a th:href="@{/admin/page/1}">借阅管理</a><br>
+    <a th:href="@{/admin/page/1}">管理员系统管理</a><br>
+    <a th:href="@{/reader/page/1}">读者管理</a><br>
+    <a th:href="@{/updateAdminOne}">修改密码</a><br>
+    <!--    </form>-->
+</div>
+</body>
+</html>

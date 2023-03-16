@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>添加图书</title>
+    <link rel="stylesheet" th:href="@{/static/css/index_work.css}">
+</head>
+<body>
+<form style="text-align: center" th:action="@{/book/page/1}" method="post">
+    图书号     <input type="text" name="bookId" placeholder="图书号"><br>
+    书名    <input type="text" name="name" placeholder="书名"><br>
+    作者    <input type="text" name="author" placeholder="作者"><br>
+    出版社    <input type="text" name="publish" placeholder="出版社"><br>
+    标准书号    <input type="text" name="isbn" placeholder="标准书号"><br>
+    简介    <input type="text" name="introduction" placeholder="简介"><br>
+    语言    <input type="text" name="language" placeholder="语言"><br>
+    价格    <input type="text" name="price" placeholder="价格"><br>
+    出版时间    <input type="text" name="pubDate" placeholder="出版时间"><br>
+    分类号    <input type="text" name="clazzId" placeholder="分类号"><br>
+    剩余数量    <input type="text" name="number" placeholder="剩余数量"><br>
+        <input type="submit" value="提交"><br>
+</form>
+</body>
+</html>

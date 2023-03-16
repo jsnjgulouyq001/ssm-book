@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理系统</title>
+    <link rel="stylesheet" th:href="@{/static/css/index_work.css}">
+</head>
+<body>
+<div style="text-align: right">
+    <form>
+        欢迎使用图书读者系统
+    </form>
+</div>
+<div style="text-align:center;font-size: 200%">图书管理系统</div>
+<div style="text-align: right;font-size: 120%">
+    <form method="post">
+        <a th:href="@{/goToAdmin}">管理员登录</a><br>
+        <a th:href="@{/goToReader}">读者登录</a><br>
+        <a th:href="@{/goToReaderRegister}">读者注册</a><br>
+    </form>
+</div>
+</body>
+</html>

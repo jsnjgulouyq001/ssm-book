@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图书首页</title>
+    <link rel="stylesheet" th:href="@{/static/css/index_work.css}">
+</head>
+<body>
+<div style="text-align: right">
+    <form>
+<!--        <a th:text="${card.username}" th:href="@{/getReaderById}"></a>-->
+        欢迎使用图书读者系统
+        <a th:href="@{/readerLogOut}">退出登录</a>
+    </form>
+</div>
+<div style="text-align: center;font-size:200%">图书读者系统</div>
+<!--下面是搜索功能，模糊查询之后将数据放在book集合中展示到界面中(重定向到当前界面)-->
+<form style="text-align: center" th:href="@{/bookReaderLike/page/1}" method="get">
+    <input type="search" name="search" placeholder="请输入关键字">
+    <input type="submit" value="搜索">
+</form>
+<table>
+    <tr>
+        <th colspan="10">图书列表</th>
+    </tr>
+    <tr>
+        <th>图书号</th>
+        <th>书名</th>
+        <th>作者</th>
+        <th>出版社</th>
+        <th>标准书号</th>
+        <!--<th>简介</th>-->
+        <th>ISBN</th>
+        <th>语言</th>
+        <th>价格</th>
+        <!--<th>出版时间</th>-->
+        <th>分类号</th>
+        <th>剩余数量</th>
+        <!--<th><a th:href="@{/toAdd}">详情</a></th>-->
+
+    </tr>
+    <tr th:each="book,status:${page.list}">
+        <td th:text="${status.count}"></td>
+        <td th:text="${book.bookId}"></td>
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.author}"></td>
+        <!--<td th:text="${book.publish}"></td>-->
+        <td th:text="${book.isbn}"></td>
+        <td th:text="${book.introduction}"></td>
+        <td th:text="${book.language}"></td>
+        <td th:text="${book.price}"></td>
+        <!--<td th:text="${book.pubDate}"></td>-->
+        <td th:text="${book.clazzId}"></td>
+        <td th:text="${book.number}"></td>
+    </tr>
+</table>
+<div style="text-align: center">
+    <a th:if="${page.hasPreviousPage}" th:href="@{/bookReaderLike/page/1}">首页</a>
+    <a th:if="${page.hasPreviousPage}" th:href="@{'/bookReaderLike/page/'+${page.prePage}}">上一页</a>
+    <span th:each="num:${page.navigatepageNums}">
+        <!--从page(导航分页)中循环出来的数字取出，放入th:text-->
+        <a th:if="${page.pageNum==num}" th:href="@{'/bookReaderLike/page/'+${num}}" style="color: #FF00FF;" th:text="${num}">下一页</a>
+        <a th:if="${page.pageNum!=num}" th:href="@{'/bookReaderLike/page/'+${num}}" th:text="${num}">下一页</a>
+    </span>
+    <a th:if="${page.hasNextPage}" th:href="@{'/bookReaderLike/page/'+${page.NextPage}}">下一页</a>
+    <a th:if="${page.hasNextPage}" th:href="@{'/bookReaderLike/page/'+${page.pages}}">末页</a>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>图书首页</title>
+    <link rel="stylesheet" th:href="@{/static/css/index_work.css}">
+</head>
+<body>
+<div style="text-align: right">
+    <form>
+        欢迎使用图书读者系统
+        <a th:href="@{/readerLogOut}">退出登录</a>
+    </form>
+</div>
+<div style="text-align: center;font-size: 200%">图书读者使用系统</div>
+<div style="text-align: center;font-size:150%">
+    <!--    <form>-->
+    读者功能展示<br>
+    <br>
+    <a th:href="@{/bookReader/page/1}">查看全部图书</a><br>
+    <!--借书还书放在展示功能中的相对的操作栏中-->
+    <!--还书也可以在借阅信息中实现还书功能-->
+    <!--        <a th:href="@{/bookAdminLike/page/{pageNum}}">借书</a><br>-->
+    <!--        <a th:href="@{/lendBook/page/{pageNum}}">还书</a><br>-->
+    <a th:href="@{/lend}">查看借阅信息</a><br>
+    <a th:href="@{/getReaderById}">查看读者信息</a><br>
+    <a th:href="@{/UpdateReaderByUsernameOne}">修改密码</a>
+    <!--    </form>-->
+</div>
+</body>
+</html>

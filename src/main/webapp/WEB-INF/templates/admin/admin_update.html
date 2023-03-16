@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员修改用户名和密码</title>
+</head>
+<body>
+<div style="text-align: center">
+<form th:href="@{/updateAdminTwo}" method="post">
+    <input type="text" value="用户名" name="username"><br>
+    <input type="text" value="密码" name="password"><br>
+    <input type="submit" name="提交">
+</form>
+</div>
+</body>
+</html>

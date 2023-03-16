@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>展示读者的信息</title>
+</head>
+<body>
+<div style="text-align: right">
+    <form>
+        <a th:text="${reader.username}" th:href="@{/getReaderById}"></a>
+        欢迎使用图书读者系统
+        <a th:href="@{/readerLogOut}">退出登录</a>
+    </form>
+</div>
+<div>
+    <div>
+    </div>
+</div>
+<table>
+    <tr>
+        <td>
+        </td>
+    </tr>
+</table>
+<form>
+    <div style="text-align: center">
+        <div>读者证号</div><div th:text="${reader.read_id}"></div><br>
+        <div>姓名</div><div th:text="${reader.name}"></div><br>
+        <div>性别</div><div th:text="${reader.gender}"></div><br>
+        <div>生日</div><div th:text="${reader.birth}"></div><br>
+        <div>电话</div><div th:text="${reader.phone}"></div><br>
+        <div>邮箱</div><div th:text="${reader.email}"></div><br>
+        <a th:href="">返回</a>
+    </div>
+</form>
+</body>
+</html>
